@@ -1,5 +1,63 @@
-$body-color: blue;
+$color-primary: #04D7D6;
+$color-secondary: #01485C;
+$color-accent: #007367;
+
+$font-primary: 'Raleway', sans-serif;
+$font-secondary: 'Chakra Petch', sans-serif;
 
 body {
-  color: $body-color;
+  background-color: black;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  h1 {
+    color: $color-primary;
+    font-family: $font-primary;
+  }
+
+  h2 {
+    color: $color-secondary;
+  }
+
+  main {
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .clock {
+      width: 500px;
+      height: 500px;
+      border: solid 1em $color-secondary;
+      border-radius: 50%;
+      .hand {
+        background-color: $color-primary;
+        position: absolute;
+        top: 430px;
+        left: 50%;
+        width: 245px;
+        height: 5px;
+        border-radius: 8px;
+        transform-origin: 0%;
+        transition: all 0.15s;
+        transform: rotate(270deg);
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      }
+      .hour-hand {
+        width: 125px;
+        height: 12px;
+      }
+      .minute-hand {
+        height: 8px;
+      }
+      .second-hand {
+        background-color: yellow;
+      }
+    }
+
+  }
+
 }
